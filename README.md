@@ -41,7 +41,7 @@ Esto da como resultado un nuevo array con los productos, para los cuales se incl
 
 Crear el archivo `/etc/apache2/sites-available/api-proveedores.com` con el contenido:
 
-  ```
+```xml
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName api-proveedores.com
@@ -54,7 +54,7 @@ Crear el archivo `/etc/apache2/sites-available/api-proveedores.com` con el conte
         Require all granted
     </Directory>
   </VirtualHost>
-  ```
+```
 
 2. Ejecutar los comandos en una terminal:
 
