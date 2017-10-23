@@ -63,7 +63,7 @@ a2enmod rewrite
 
 a2disite 000-default.conf
 
-a2ensite
+a2ensite api-proveedores.com
 ```
 
 3. Agregar en hosts: `/etc/hosts`
