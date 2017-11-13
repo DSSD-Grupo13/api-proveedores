@@ -6,39 +6,50 @@ Esta implementado utilizando las tecnologias PHP, Apache y el framework Slim
 
 Existe un único metodo, el cual recibe una lista de productos y devuelve un presupuesto
 
-Se debe enviar una solicitud `HTTP POST` a la URL `/solicitar-presupuesto`. La solicitud debe incluir en el `body` un array de productos en formato `JSON`, por ejemplo:
+Se debe enviar una solicitud `HTTP POST` a la URL `/solicitar-presupuesto`. La solicitud debe incluir en el `body` un array de objetos en formato `JSON`, por ejemplo:
 
 ```JSON
-[
-  {
-    "name": "puerta",
-    "amount": 1
-  },
-  {
-    "name": "ventana",
-    "amount": 2
-  }
-]
+{
+	"objetos":
+	[
+	    {
+	      "nombre": "puerta",
+	      "cantidad": 1,
+	      "descripcion": "puerta"
+	    },
+	    {
+	      "nombre": "parabrisas",
+	      "cantidad": 2,
+	      "descripcion": "parabrisas"
+	    }
+	]
+}
 ```
 
 Esto da como resultado un nuevo array con los productos, para los cuales se incluye ademas un campo de precio:
 
 ```JSON
-[
-    {
-        "name": "puerta",
-        "amount": 1,
-        "price": 1275.92,
-        "total": 1275.92
-    },
-    {
-        "name": "ventana",
-        "amount": 2,
-        "price": 3845.25,
-        "total": 7690.5
-    }
-]
+{
+    "objetos": [
+        {
+            "nombre": "puerta",
+            "cantidad": 1,
+            "descripcion": "la fue abollada por el granizo",
+            "precio": 1871.19,
+            "total": 1871.19
+        },
+        {
+            "nombre": "parabrisas",
+            "cantidad": 2,
+            "descripcion": "el vidrio fue estallado por el granizo",
+            "precio": 2515.08,
+            "total": 5030.16
+        }
+    ],
+    "total_final": 6901.35
+}
 ```
+
 # Instalación
 
 1. Se agrega un <Virtual-Host> al servidor de Apache2, en este ejemplo la API se registra en el dominio `api-proveedores.com`
@@ -48,7 +59,7 @@ Crear el archivo `/etc/apache2/sites-available/api-proveedores.com.conf` con el 
 ```xml
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName api-proveedores.com
+    Servernombre api-proveedores.com
     ServerAlias www.api-proveedores.com
     DocumentRoot /var/www/html/api-proveedores.com
 

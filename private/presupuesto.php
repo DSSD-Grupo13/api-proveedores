@@ -6,14 +6,18 @@ function random_float($min, $max)
 
 function crearPresupuestoJSON($productos)
 {
-  $presupuesto = array();
+  $presupuesto = [];
+  $total = 0;
   foreach ($productos as $each) {
-    $price = round(random_float(1, 5000), 2);
-    $total = $price * $each->{'amount'};
-    $each->{'price'} = $price;
-    $each->{'total'} = $total;
+    $precio = round(random_float(1, 5000), 2);
+    $total_producto = $precio * $each['cantidad'];
+    $each['precio'] = $precio;
+    $each['total'] = $total_producto;
+    $total = $total + $total_producto;
     $presupuesto[] = $each;
   }
 
-  return json_encode($presupuesto, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+  return array(
+      'objetos' => $presupuesto,
+      'total_final' => $total);
 }
