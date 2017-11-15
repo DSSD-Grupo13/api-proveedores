@@ -18,48 +18,48 @@ Esta implementado utilizando las tecnologias PHP, Apache y el framework Slim
 
   La solicitud debe incluir en el `body` un array de objetos en formato `JSON`, por ejemplo:
 
-	```JSON
-	{
-	  "objetos": [
-	    {
-	      "nombre": "puerta",
-	      "cantidad": 1,
-	      "descripcion": "puerta"
-	    },
-	    {
-	      "nombre": "parabrisas",
-	      "cantidad": 2,
-	      "descripcion": "parabrisas"
-	    }
-	  ]
-	}
-  ```
+```JSON
+{
+  "objetos": [
+    {
+      "nombre": "puerta",
+      "cantidad": 1,
+      "descripcion": "puerta"
+    },
+    {
+      "nombre": "parabrisas",
+      "cantidad": 2,
+      "descripcion": "parabrisas"
+    }
+  ]
+}
+```
 
   Esto da como resultado un nuevo array con los productos, para los cuales se incluye ademas un campo de precio:
 
     HTTP 200 OK
 
-	```JSON
-	{
-	  "objetos": [
-	    {
-	      "nombre": "puerta",
-	      "cantidad": 1,
-	      "descripcion": "la fue abollada por el granizo",
-	      "precio": 1871.19,
-	      "total": 1871.19
-	    },
-	    {
-	      "nombre": "parabrisas",
-	      "cantidad": 2,
-	      "descripcion": "el vidrio fue estallado por el granizo",
-	      "precio": 2515.08,
-	      "total": 5030.16
-	    }
-	  ],
-	  "total_final": 6901.35
-	}
-	```
+```JSON
+{
+  "objetos": [
+    {
+      "nombre": "puerta",
+      "cantidad": 1,
+      "descripcion": "la fue abollada por el granizo",
+      "precio": 1871.19,
+      "total": 1871.19
+    },
+    {
+      "nombre": "parabrisas",
+      "cantidad": 2,
+      "descripcion": "el vidrio fue estallado por el granizo",
+      "precio": 2515.08,
+      "total": 5030.16
+    }
+  ],
+  "total_final": 6901.35
+}
+```
 
 ## Instalación
 
