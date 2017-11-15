@@ -65,41 +65,41 @@ Esta implementado utilizando las tecnologias PHP, Apache y el framework Slim
 
 1. Se agrega un `Virtual-Host` al servidor de Apache2, en este ejemplo la API se registra en el dominio `api-proveedores.com`
 
-	Crear el archivo `/etc/apache2/sites-available/api-proveedores.com.conf` con el contenido:
+    Crear el archivo `/etc/apache2/sites-available/api-proveedores.com.conf` con el contenido:
 
-	```xml
-	<VirtualHost *:80>
-		ServerAdmin webmaster@localhost
-	    ServerName api-proveedores.com
-	    ServerAlias www.api-proveedores.com
-	    DocumentRoot /var/www/html/api-proveedores.com
+    ```xml
+    <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName api-proveedores.com
+        ServerAlias www.api-proveedores.com
+        DocumentRoot /var/www/html/api-proveedores.com
 
-	    <Directory /var/www/html/api-proveedores.com/>
-		    Options Indexes FollowSymLinks
-		    AllowOverride All
-		    Require all granted
-	    </Directory>
-	</VirtualHost>
-	```
+        <Directory /var/www/html/api-proveedores.com/>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    ```
 
   >Nota: El directorio `/var/www/html/api-proveedores.com` debe existir
 
 2. Ejecutar los comandos en una terminal (los dos primeros pueden no ser necesarios si ya se ejecutaron alguna vez):
 
-	```
-	sudo a2enmod rewrite
-	sudo a2dissite 000-default.conf
-	sudo a2ensite api-proveedores.com
-	```
+    ```
+    sudo a2enmod rewrite
+    sudo a2dissite 000-default.conf
+    sudo a2ensite api-proveedores.com
+    ```
 
 3. Agregar en hosts: `/etc/hosts`
 
-	```
-	127.0.0.1 api-proveedores.com
-	```
+    ```
+    127.0.0.1 api-proveedores.com
+    ```
 
 4. Luego reiniciar el servicio de Apache
 
-	```
-	systemctl restart apache2
-	```
+    ```
+    systemctl restart apache2
+    ```
