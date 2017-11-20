@@ -24,12 +24,12 @@ Esta implementado utilizando las tecnologias PHP, Apache y el framework Slim
     {
       "nombre": "puerta",
       "cantidad": 1,
-      "descripcion": "puerta"
+      "descripcion": "fue abollada por el granizo"
     },
     {
       "nombre": "parabrisas",
       "cantidad": 2,
-      "descripcion": "parabrisas"
+      "descripcion": "el vidrio fue estallado por el granizo"
     }
   ]
 }
@@ -45,7 +45,7 @@ Esta implementado utilizando las tecnologias PHP, Apache y el framework Slim
     {
       "nombre": "puerta",
       "cantidad": 1,
-      "descripcion": "la fue abollada por el granizo",
+      "descripcion": "fue abollada por el granizo",
       "precio": 1871.19,
       "total": 1871.19
     },
